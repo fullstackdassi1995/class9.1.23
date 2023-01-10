@@ -70,15 +70,16 @@ const connectedKnex = knex({
 *   /employee/:
 *     get:
 *       summary: List all of the employees
-*       tags: [Employees]
+*       tags: [Employee]
 *       responses:
 *         "200":
 *           description: The list of employees.
 *           content:
 *             application/json:
 *               schema:
-*                 $ref: '#/components/schemas/Employee'
+*                 $ref: '#/components/schemas/employee'
 */
+
 router.get('/', async (req, resp) => {
     try {
         const employees = await connectedKnex('employee').select('*');
@@ -106,7 +107,26 @@ function is_valid_employee(obj) {
         obj.hasOwnProperty('address') && obj.hasOwnProperty('salary') 
 }
 
-// ADD
+/**
+* @swagger
+* /employee/:
+*     post:
+*       summary: Creates a new employee
+*       tags: [employee]
+*       requestBody:
+*         required: true
+*         content:
+*           application/json:
+*             schema:
+*               $ref: '#/components/schemas/employee'
+*       responses:
+*         "200":
+*           description: The created employees.
+*           content:
+*             application/json:
+*               schema:
+*                 $ref: '#/components/schemas/employee'
+*/
 router.post('/', async (req, resp) => {
     console.log(req.body);
     const employee = req.body

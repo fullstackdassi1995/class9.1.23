@@ -96,23 +96,23 @@
 // /**
 // * 
 // * @swagger
-// * /books/:
+// * /employees/:
 // *     post:
 // *       summary: Creates a new book
-// *       tags: [Books]
+// *       tags: [employees]
 // *       requestBody:
 // *         required: true
 // *         content:
 // *           application/json:
 // *             schema:
-// *               $ref: '#/components/schemas/Book'
+// *               $ref: '#/components/schemas/employees'
 // *       responses:
 // *         "200":
-// *           description: The created book.
+// *           description: The created employees.
 // *           content:
 // *             application/json:
 // *               schema:
-// *                 $ref: '#/components/schemas/Book'
+// *                 $ref: '#/components/schemas/employees'
 // */
 
 // router.post("/", function (req, res) {

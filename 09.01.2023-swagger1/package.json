@@ -11,7 +11,7 @@
   "author": "",
   "license": "ISC",
   "bugs": "",
-  "homepage": "https://github.com/fullstack180822/29.12.2022#readme",
+  "homepage": "https://github.com/fullstack180822/09.01.2023.git#readme",
   "dependencies": {
     "config": "^3.3.8",
     "cors": "^2.8.5",
@@ -19,6 +19,7 @@
     "knex": "^2.3.0",
     "pg": "^8.8.0",
     "swagger-jsdoc": "^6.2.7",
-    "swagger-ui-express": "^4.6.0"
+    "swagger-ui-express": "^4.6.0",
+    "winston": "^3.8.2"
   }
 }

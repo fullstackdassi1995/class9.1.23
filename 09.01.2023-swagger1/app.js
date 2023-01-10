@@ -37,6 +37,36 @@ app.get('/fruit', (req, resp) => {
 // 2. path params   <url> / 1 
 // 3. body 
 // 4. headers
+
+/**
+*  @swagger
+*   /books/{id}:
+*     get:
+*       summary: Gets a book by id
+*       tags: [Books]
+*       parameters:
+*         - in: path
+*           name: id
+*           schema:
+*             type: integer
+*           required: true
+*           description: The book id
+*       responses:
+*         "200":
+*           description: The list of books.
+*           content:
+*             application/json:
+*               schema:
+*                 $ref: '#/components/schemas/Book'
+*         "404":
+*           description: Book not found.
+*/
+router.get("/:id", function (req, res) {
+	let book = books.find(function (item) {
+		return item.id == req.params.id;
+	});
+
+
 app.get('/add', (req, resp) => {
     // http://localhost:8080/ add ? x = 3 & y = 4
 
@@ -61,7 +91,7 @@ app.get('/add', (req, resp) => {
     resp.end(`<h1>${x} + ${y} = ${x + y}</h1>`)
     //resp.end(`${JSON.stringify(req.query.x)}`)
 })
-
+})
 // ============================================
 // == move all REST API to routes/employees.js
 // ============================================
